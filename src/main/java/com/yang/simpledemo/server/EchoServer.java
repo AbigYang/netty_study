@@ -1,4 +1,4 @@
-package com.yang.simpledemo.client.server;
+package com.yang.simpledemo.server;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.Channel;
