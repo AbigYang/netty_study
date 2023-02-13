@@ -1,4 +1,4 @@
-package com.yang;
+package com.yang.simpledemo.client.server;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.Channel;
@@ -6,7 +6,7 @@ import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
-import io.netty.channel.sctp.nio.NioSctpServerChannel;
+import io.netty.channel.socket.nio.NioServerSocketChannel;
 
 import java.net.InetSocketAddress;
 
@@ -34,7 +34,7 @@ public class EchoServer {
             ServerBootstrap b = new ServerBootstrap();
             b.group(group)
                     //指定所使⽤的NIO传输Channel
-                    .channel(NioSctpServerChannel.class)
+                    .channel(NioServerSocketChannel.class)
                     //使⽤指定的端⼝设置套接字地址
                     .localAddress(new InetSocketAddress(port))
                     //添加⼀个EchoServer-Handler到⼦Channel的ChannelPipeline
