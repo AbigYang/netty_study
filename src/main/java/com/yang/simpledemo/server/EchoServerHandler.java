@@ -1,4 +1,4 @@
-package com.yang;
+package com.yang.simpledemo.server;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
@@ -13,7 +13,7 @@ public class EchoServerHandler extends ChannelInboundHandlerAdapter {
         ByteBuf in = (ByteBuf) msg;
         System.out.println("Server received: " + in.toString(CharsetUtil.UTF_8));
         //将接收到的消息写给发送者，⽽不冲刷出站消息
-        ctx.write("i received" + in.toString(CharsetUtil.UTF_8));
+        ctx.write(in/*.toString(CharsetUtil.UTF_8)*/);
     }
 
     @Override
